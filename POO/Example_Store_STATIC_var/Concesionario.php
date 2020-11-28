@@ -30,7 +30,7 @@
 		*/
 		//---------METHOD STATIC-------
 		static function descuento_gobierno(){
-			//condicoines co nfechas 
+			//condicoines con fechas 
 			if (date("m-d-y">"05-01-15")) {
 				self::$ayuda=4500;
 			}
