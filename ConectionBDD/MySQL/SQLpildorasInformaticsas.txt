@@ -1,0 +1,23 @@
+* D:programas/mysql/bin
+* mysql -u root(nameUsser) -p (paswordISnotNull)
+*with the statemetn top is for acces a mysql
+---------------------
+*SHOW DATABASES;
+*SHOW TABLES;
+*RENAME
+* ALTER TABLE tableName RENAME TO newName;
+----
+* CREATE DATABASE USUARIOS;
+* USE USUARIOS(use data base usuarios)
+* CREATE TABLE DATOSUSUARIO(NAME VARCHAR(30),CLAVE VARCHAR(10));
+* DROP TABLE DATOSUSUARIO
+* DESCRIBE DATOSUSUARIOS;(show table in consol)
+* DROP DATABASE USUARIOS;
+*********************
+-
+- CREATE TABLE DATOSPERSONALES(NIF VARCHAR(10),NOMBRE VARCHAR (15), APELLIDO VARCHAR(20),EDAD INT(2));
+- ALTER TABLE DATOSPERSONALES DROP EDAD;(remove age field)
+- ALTER TABLE DATOSPERSONALES ADD EDAD;(add a new column)
+- INSERT INTO DATOSPERSONALES (NIF ,NOMBRE,APELLIDO,EDAD) VALUES ("51344LK","PEDRO","TORO",26);
+- SELECT NOMBRE,APELLIDO FROM datospersonales
+- SELECT * FROM datospersonales(ALL COLUMNS)
