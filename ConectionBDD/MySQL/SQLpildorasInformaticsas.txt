@@ -21,3 +21,37 @@
 - INSERT INTO DATOSPERSONALES (NIF ,NOMBRE,APELLIDO,EDAD) VALUES ("51344LK","PEDRO","TORO",26);
 - SELECT NOMBRE,APELLIDO FROM datospersonales
 - SELECT * FROM datospersonales(ALL COLUMNS)
+
+--------------
+CREATE TABLE productos(
+idfab CHAR(5) NOT NULL PRIMARY KEY,
+ipproducto CHAR(15) NOT NULL,
+descripcion CHAR(15) NOT NULL,
+precio DOUBLE PRECISION NOT NULL,
+existencias INTEGER NOT NULL);
+INSERT INTO productos VALUES('1ac','CL002','leche','41','1042');
+INSERT INTO productos VALUES('2ac','CL002','pan','11','42');
+INSERT INTO productos VALUES('3ac','CL006','manteca','12','842');
+INSERT INTO productos VALUES('9ac','CL007','carbon','80','14');
+INSERT INTO productos VALUES('4ac','CL005','carne','45','10');
+INSERT INTO productos VALUES('5ac','CL004','pescado','78','442');
+INSERT INTO productos VALUES('6acb','CL0112','ispi pescado','2001','10');
+INSERT INTO productos VALUES('7acb','CL0113','trucha pescado','365','50');
+
+
+
+CREATE TABLE IF NOT EXISTS tasks (
+    task_id INT AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    start_date DATE,
+    priority TINYINT NOT NULL DEFAULT 3,
+    description TEXT,
+    PRIMARY KEY (task_id)
+);
+-----------------
+
+INSERT INTO tasks(title,priority)
+VALUES('Learn MySQL INSERT Statement',1);
+-----
+INSERT INTO tasks(title, start_date, description)
+VALUES('Insert date into table','2018-01-09','this is one text');
