@@ -18,6 +18,11 @@
 <body>
 
     <?php
+    $authenticated=false;//---new
+
+
+
+
 if (isset($_POST["submit"])) {//pass 2
 
 try {
@@ -57,13 +62,12 @@ try {
     $registry_number = $results->rowCount();
 
     
-    if ($registry_number !=0) {
+    if ($registry_number !=0) { 
     
-        session_start();    // new      +++
-        // If we verify that the user is registered, we start the session
-        $_SESSION["usuario"]=$_POST["username"];//new       +++
-        //$_SESSION["nameVariable"] GLOBAL VARIABLE use in anywhere on this site
-    
+        $authenticated = true;
+        if (isset($_POST["autoLog"])) {
+            setcookie("name_user",$_POST["username"],time()+4000);
+        }
 
     
     } else {
@@ -81,22 +85,23 @@ try {
 
 
 //----------------------------------------------------------------
- if (!isset($_SESSION['usuario'])) {
-     include("form.html");
- } else {
-    echo "USER" . $_SESSION["usuario"];
-}
- 
+    if ($authenticated== false) {
+        if (!isset($_COOKIE["name_user"])) {//if the cookie not created
+            include ("form.html");
+        }
+    }
     
     ?>
-  
+
     <div class="container">
         <h2>Aligning images</h2>
         <p>Use the float classes to float the image to the left or to the right:</p>
-        <img src="https://cdn.pixabay.com/photo/2020/07/31/07/59/flowers-5452263__340.jpg" class="float-left" alt="Paris" width="304" height="236">
-        <img src="https://cdn.pixabay.com/photo/2020/12/27/12/07/sunrise-5863751__340.png" class="float-right" alt="Paris" width="304" height="236">
+        <img src="https://cdn.pixabay.com/photo/2020/07/31/07/59/flowers-5452263__340.jpg" class="float-left"
+            alt="Paris" width="304" height="236">
+        <img src="https://cdn.pixabay.com/photo/2020/12/27/12/07/sunrise-5863751__340.png" class="float-right"
+            alt="Paris" width="304" height="236">
     </div>
-    
+
 </body>
 
 </html>
